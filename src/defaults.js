@@ -1,8 +1,7 @@
 import uuidv1 from 'uuid/v1'
-import moment from 'moment'
 import { setDateWithUTCtime } from './utils'
 
-const now = moment().utc()
+const now = new Date();
 
 const defaults = {
   title: 'Untitled event',
@@ -10,12 +9,12 @@ const defaults = {
   method: 'PUBLISH',
   uid: uuidv1(),
   timestamp: setDateWithUTCtime([
-    now.get('year'),
-    now.get('month') + 1,
-    now.get('date'),
-    now.get('hours'),
-    now.get('minutes'),
-    now.get('seconds')
+    now.getUTCFullYear(),
+    now.getUTCMonth() + 1,
+    now.getUTCDate(),
+    now.getUTCHours(),
+    now.getUTCMinutes(),
+    now.getUTCSeconds(),
   ]),
   start: setDateWithUTCtime()
 }
