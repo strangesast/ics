@@ -1,4 +1,4 @@
-import uuidv1 from 'uuid/v1'
+import nanoid from 'nanoid';
 import { setDateWithUTCtime } from './utils'
 
 const now = new Date();
@@ -7,7 +7,7 @@ const defaults = {
   title: 'Untitled event',
   productId: 'adamgibbons/ics',
   method: 'PUBLISH',
-  uid: uuidv1(),
+  uid: nanoid(),
   timestamp: setDateWithUTCtime([
     now.getUTCFullYear(),
     now.getUTCMonth() + 1,
